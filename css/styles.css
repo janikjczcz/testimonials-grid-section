@@ -1,40 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
 
 :root {
-    
+  --black: rgb(18, 18, 18);
+  --dark-blue: rgb(25, 32, 45);
+  --white: rgb(255, 255, 255);
+  --grey-100: rgb(231, 234, 238);
+  --grey-200: rgb(207, 207, 207);
+  --grey-400: rgb(103, 109, 126);
+  --grey-500: rgb(72, 85, 106);
+  --grey-shadow: rgba(72, 85, 106, 0.24);
+  --purple-50: rgb(237, 228, 255);
+  --purple-300: rgb(167, 117, 241);
+  --purple-500: rgb(115, 63, 200);
+
+  --font-family: "Barlow Semi Condensed", sans-serif;
+  --font-featured-text: 600 2rem / 1.2 var(--font-family); /* text-preset-1 */
+  --font-author: 500 1.3rem / 1.1 var(--font-family); /* text-preset-2 */
+  --font-test-text: 500 1.3rem / 1.4 var(--font-family); /* text-preset-3 */
+  --font-status: 500 1.1rem / 1.1 var(--font-family); /* text-preset-4 */
+
+  --space-50: 0.4rem;
+  --space-100: calc(var(--space-50) * 2);
+  --space-200: calc(var(--space-50) * 4);
+  --space-300: calc(var(--space-50) * 6);
+  --space-400: calc(var(--space-50) * 8);
+  --space-500: calc(var(--space-50) * 10);
 }
 
-
-*, *::before, *::after {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 .sr-only {
-    position: absolute;
-    width:.1rem;
-    height:.1rem;
-    padding:0;
-    margin:-.1rem;
-    overflow:hidden;
-    clip: rect(0,0,0,0);
-    border:0;
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -0.1rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
-
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
-
 
 img {
-    max-width:100%;
-    display:block;
+  max-width: 100%;
+  display: block;
 }
 
-
-.attribution { font-size: 1.1rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+  font: var(--font-status);
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
