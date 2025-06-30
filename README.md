@@ -33,7 +33,7 @@ This is a solution to the [Testimonials grid section challenge on Frontend Mento
 
 ### What I learned
 
-- **add later**
+- practiced CSS Grid even more with this layout
 
 ## Author
 
