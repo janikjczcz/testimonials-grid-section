@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
 
 :root {
+  --bg-color: rgb(246, 245, 246);
   --black: rgb(18, 18, 18);
   --dark-blue: rgb(25, 32, 45);
   --white: rgb(255, 255, 255);
@@ -22,9 +23,7 @@
   --space-50: 0.4rem;
   --space-100: calc(var(--space-50) * 2);
   --space-200: calc(var(--space-50) * 4);
-  --space-300: calc(var(--space-50) * 6);
   --space-400: calc(var(--space-50) * 8);
-  --space-500: calc(var(--space-50) * 10);
 }
 
 *,
@@ -55,10 +54,212 @@ img {
   display: block;
 }
 
+body {
+  background-color: var(--bg-color);
+}
+
+main {
+  display: grid;
+  place-content: center;
+  padding: clamp(3.5rem, 2.232vw + 2.786rem, 6rem);
+}
+
+.testimonials-wrapper {
+  max-width: clamp(30.5rem, 72.232vw + 7.386rem, 111.4rem);
+  display: grid;
+  gap: var(--space-400);
+}
+
+.test-card {
+  display: flex;
+  flex-flow: column;
+  gap: var(--space-200);
+  padding: var(--space-400);
+  background-color: white;
+  border-radius: var(--space-100);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 4rem 6rem 5rem -3.7rem var(--grey-shadow);
+}
+
+.test-card_author-wrapper,
+.test-card_author-content-wrapper {
+  display: flex;
+  gap: var(--space-200);
+  align-items: center;
+  width: fit-content;
+}
+
+.test-card_avatar-wrapper {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: 0.2rem solid transparent;
+}
+
+.test-card_avatar_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.test-card_author-details-wrapper {
+  display: flex;
+  flex-flow: column;
+  gap: var(--space-50);
+}
+
+.test-card_author-name {
+  font: var(--font-author);
+  color: var(--grey-500);
+}
+
+.test-card_author-status {
+  font: var(--font-status);
+  color: var(--grey-400);
+}
+
+.test-card_content-wrapper {
+  display: flex;
+  flex-flow: column;
+  gap: var(--space-200);
+}
+
+.test-card_featured-text {
+  font: var(--font-featured-text);
+  color: var(--grey-500);
+}
+
+.text-card_rest-text {
+  font: var(--font-test-text);
+  color: var(--grey-400);
+}
+
+.text-card_rest-text::before,
+.text-card_rest-text::after {
+  content: '"';
+}
+
+.test-card_quote {
+  display: none;
+}
+
+.purple {
+  background-color: var(--purple-500);
+}
+
+.purple .test-card_avatar-wrapper {
+  outline-color: var(--purple-300);
+}
+
+.purple .test-card_author-name,
+.purple .test-card_featured-text {
+  color: var(--white);
+}
+
+.purple .test-card_author-status,
+.purple .text-card_rest-text {
+  color: var(--purple-50);
+}
+
+.grey {
+  background-color: var(--grey-500);
+}
+
+.grey .test-card_author-name,
+.grey .test-card_featured-text {
+  color: var(--white);
+}
+
+.grey .test-card_author-status,
+.grey .text-card_rest-text {
+  color: var(--grey-100);
+}
+
+.dark-blue {
+  background-color: var(--dark-blue);
+}
+
+.dark-blue .test-card_avatar-wrapper {
+  outline-color: var(--purple-500);
+}
+
+.dark-blue .test-card_author-name,
+.dark-blue .test-card_author-status {
+  color: var(--white);
+}
+
+.dark-blue .test-card_featured-text {
+  color: var(--grey-200);
+}
+
+.dark-blue .text-card_rest-text {
+  color: var(--grey-100);
+}
+
 .attribution {
   font: var(--font-status);
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 41rem) {
+  .testimonials-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .first,
+  .fourth,
+  .fifth {
+    grid-column: 1 / -1;
+  }
+
+  .test-card_quote {
+    display: block;
+    position: absolute;
+    right: 25%;
+  }
+
+  .first .test-card_content-wrapper {
+    z-index: 2;
+  }
+}
+
+@media only screen and (min-width: 75rem) {
+  main {
+    height: 100vh;
+  }
+  .testimonials-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .first {
+    grid-column: 1 / 3;
+  }
+
+  .second {
+    grid-column: 3 / 4;
+  }
+
+  .third {
+    grid-column: 1 / 2;
+  }
+
+  .fourth {
+    grid-column: 2 / 4;
+  }
+
+  .fifth {
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+  }
+
+  .test-card_quote {
+    right: 10%;
+  }
 }
