@@ -79,7 +79,7 @@ main {
   border-radius: var(--space-100);
   position: relative;
   overflow: hidden;
-  box-shadow: 4rem 6rem 5rem -3.7rem var(--grey-shadow);
+  filter: drop-shadow(4rem 6rem 3.7rem var(--grey-shadow));
 }
 
 .test-card_author-wrapper,
